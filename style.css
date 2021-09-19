@@ -14,72 +14,56 @@
 
 * {
     box-sizing: border-box;
-
     font-family: 'Rubik', sans-serif;
-
     margin: 0;
     padding: 0;
-
     list-style-type: none;
 }
 
 body {
     width: 100vw;
     height: 100vh;
-
     display: grid;
     place-items: center;
-
     background-color: var(--very-dark-blue);
-
-    color: white
+    color: white;
+    overflow-x: hidden;
 }
 
 header {
-    width: 90%;
-
+    width: 100%;
     border-radius: 20px;
-
     background-color: var(--dark-blue);
     color: var(--pale-blue);
-
     margin-top: 3rem;
 }
 
 .profile {
     width: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 20px;
-
     background-color: var(--blue);
-
     padding: 2rem 1rem;
 }
 
 .profile img {
     width: 70px;
-
     border-radius: 100%;
     border: 2px solid var(--pale-blue);
 }
 
 .profile div {
     width: 100%;
-
     display: flex;
     flex-direction: column;
-
     padding-left: 1rem;
 }
 
 .profile h1 {
     font-weight: 300;
     font-size: 30px;
-
     color: #fff;
 }
 
@@ -88,7 +72,7 @@ header ul {
     align-items: center;
     justify-content: space-around;
 
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 3rem;
 }
 
 header li {
@@ -99,17 +83,22 @@ header li {
     border: none;
 
     cursor: pointer;
+    padding-bottom: 1.5rem; 
+}
+
+header li:hover {
+    color: white;
 }
 
 .all {
-    width: 90%;
+    width: 100%;
 
     margin-top: 3rem;
 }
 
 .card {
     width: 100%;
-    height: 200px;
+    height: 240px;
 
     background-repeat: no-repeat;
     background-position: 90% -5%;
@@ -126,7 +115,7 @@ header li {
 
 .subcard {
     width: 100%;
-    height: 160px;
+    height: 200px;
     
     background-color: var(--dark-blue);
     border-radius: 15px;
@@ -149,6 +138,12 @@ header li {
 .title img {
     width: 30px;
     height: 8px;
+    cursor: pointer;
+}
+
+.title img:hover {
+    width: 31px;
+    height: 9px;
 }
 
 .title h2 {
@@ -175,26 +170,75 @@ footer {
 @media screen and (min-width: 1100px) {
 
     main {
-        width: 1000px;
-        height: 600px;
-
+        width: calc(1050px + 2rem);
+        height: 500px;
         display: flex;
     }
 
     header {
+        margin-top: 0;
         width: 300px;
         height: 100%;
+        margin-right: 1rem;
+    }
+
+    .profile {
+        height: 60%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .profile img {
+        width: 100px;
+        height: 100px;
+        border: 3px solid white;
+    }
+
+    .profile div {
+        padding-left: 0;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 2rem 0 0 1rem;
     }
 
     .all {
+        margin-top: 0;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     .card {
-        width: 250px;
+        width: 267px;
+        margin-right: 1rem;
     }
 
+    .subcard:hover {
+        background: var(--desaturated-blue);
+        cursor: pointer;
+    }
+
+    .c {
+        margin-right: 0;
+    }
+
+    .description {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .description p {
+        padding: 1rem 0;
+    }
+
+
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
 
 }
